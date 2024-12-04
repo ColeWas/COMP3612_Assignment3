@@ -2,7 +2,7 @@
 const express = require('express'); 
 const app = express(); 
 const router = require('./scripts/router.js'); 
-let PORT = 8080;
+let PORT = process.env.PORT || 8080;
 // Use the router
 app.use(router);
 
