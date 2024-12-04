@@ -1,6 +1,9 @@
 # COMP 3612 (Fall 2023)
 ### Assignment #3: Node API
 
-**Please view `COMP3612 Assignment 3.pdf` for instructions**
+## Testing
+
+## Overview
+This repository contains code for a F1 API. The assignment makes use of 
 
   
