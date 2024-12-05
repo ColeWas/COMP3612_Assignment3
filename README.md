@@ -10,20 +10,20 @@ or a combination of season and driver or constructor are able to be fetched from
 [![Render Deployment](https://img.shields.io/badge/Deployed%20on-Render.com-orange)](https://colewas-f1-api.onrender.com)
 
 ### Example: 
-**Request**: `/api/drivers/verstappen`  
+**Request**: `/api/drivers/max_verstappen`  
 
 **Response**:
 ```json
 {
-  "driverId": 50,
-  "driverRef": "verstappen",
-  "number": "",
-  "code": "",
-  "forename": "Jos",
+  "driverId": 830,
+  "driverRef": "max_verstappen",
+  "number": 33,
+  "code": "VER",
+  "forename": "Max",
   "surname": "Verstappen",
-  "dob": "1972-03-04",
+  "dob": "1997-09-30",
   "nationality": "Dutch",
-  "url": "http://en.wikipedia.org/wiki/Jos_Verstappen"
+  "url": "http://en.wikipedia.org/wiki/Max_Verstappen"
 }
 ```
 ## Project Files
