@@ -13,12 +13,11 @@ const raceData = JSON.parse(jsonData);
 jsonPath = path.join(__dirname, '../data', 'results.json'); 
 jsonData = fs.readFileSync(jsonPath, 'utf8'); 
 const resultData = JSON.parse(jsonData);
-console.log(resultData.slice(0, 5)); // Log the first 5 entries for inspection 
-
+// change data source to json file containing constructors
 jsonPath = path.join(__dirname, '../data', 'constructors.json'); 
 jsonData = fs.readFileSync(jsonPath, 'utf8'); 
 const constructorData = JSON.parse(jsonData); 
-
+// change data source to json file containing circuits
 jsonPath = path.join(__dirname, '../data', 'circuits.json'); 
 jsonData = fs.readFileSync(jsonPath, 'utf8'); 
 const circuitData = JSON.parse(jsonData); 
