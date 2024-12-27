@@ -5,7 +5,7 @@ const app = express();
 const router = require('./scripts/router.js'); 
 let PORT = process.env.PORT || 8080;
 
-app.use(cors);
+app.use(cors());
 app.use(router);
 
 // Handle invalid routes
