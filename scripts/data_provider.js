@@ -21,10 +21,29 @@ const constructorData = JSON.parse(jsonData);
 jsonPath = path.join(__dirname, '../data', 'circuits.json'); 
 jsonData = fs.readFileSync(jsonPath, 'utf8'); 
 const circuitData = JSON.parse(jsonData); 
-// qualifying file
-jsonPath = path.join(__dirname, '../data', 'qualifying.json');
+
+// q_2020 file
+jsonPath = path.join(__dirname, '../data', 'q_2020.json');
 jsonData = fs.readFileSync(jsonPath, 'utf8');
-const qualifyingData = JSON.parse(jsonData);
+const q2020Data = JSON.parse(jsonData); 
+
+// q_2021 file
+jsonPath = path.join(__dirname, '../data', 'q_2021.json');
+jsonData = fs.readFileSync(jsonPath, 'utf8');
+const q2021Data = JSON.parse(jsonData); 
+
+// q_2022 file
+jsonPath = path.join(__dirname, '../data', 'q_2022.json');
+jsonData = fs.readFileSync(jsonPath, 'utf8');
+const q2022Data = JSON.parse(jsonData); 
+
+// q_2023 file
+jsonPath = path.join(__dirname, '../data', 'q_2023.json');
+jsonData = fs.readFileSync(jsonPath, 'utf8');
+const q2023Data = JSON.parse(jsonData); 
+
+const qualifyingData = [...q2020Data, ...q2021Data, ...q2022Data, ...q2023Data];
+
 
 module.exports = {drivers: driverData, races: raceData, results: resultData, constructors: constructorData, circuits: circuitData, qualifying: qualifyingData}; 
 
