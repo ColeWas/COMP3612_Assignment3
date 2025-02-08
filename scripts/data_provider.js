@@ -21,6 +21,10 @@ const constructorData = JSON.parse(jsonData);
 jsonPath = path.join(__dirname, '../data', 'circuits.json'); 
 jsonData = fs.readFileSync(jsonPath, 'utf8'); 
 const circuitData = JSON.parse(jsonData); 
+// qualifying file
+jsonPath = path.join(__dirname, '../data', 'qualifying.json');
+jsonData = fs.readFileSync(jsonPath, 'utf8');
+const qualifyingData = JSON.parse(jsonData);
 
-module.exports = {drivers: driverData, races: raceData, results: resultData, constructors: constructorData, circuits: circuitData}; 
+module.exports = {drivers: driverData, races: raceData, results: resultData, constructors: constructorData, circuits: circuitData, qualifying: qualifyingData}; 
 

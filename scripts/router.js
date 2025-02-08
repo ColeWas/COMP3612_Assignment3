@@ -76,6 +76,18 @@ router.get('/api/results/season/:year', (req, res) => {
   seasonResults.length ? res.json(seasonResults) : notFoundResponse(res, 'No results found for the specified season');
 });
 
+// /api/qualifying/race/id - Returns qualifying for a specific race by raceId
+router.get('/api/qualifying/race/:id', (req, res) => {
+  const raceResults = results.filter(r => r.race.id == req.params.id);
+  raceResults.length ? res.json(raceResults) : notFoundResponse(res, 'No results found for the specified race');
+});
+
+// /api/qualifying/season/year - Returns all qualifying results for a season
+router.get('/api/qualifying/season/:year', (req, res) => {
+  const seasonResults = results.filter(r => r.race.year == req.params.year);
+  seasonResults.length ? res.json(seasonResults) : notFoundResponse(res, 'No results found for the specified season');
+});
+
 router.get('/api/debug/results', (req, res) => {
     console.log('Debugging resultData:', results.slice(0, 5)); // Log first 5 entries
     res.json(results.slice(0, 5)); // Return some data for testing
