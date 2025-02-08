@@ -1,7 +1,7 @@
 /*Router*/
 const express = require('express');
 const router = express.Router();
-const { drivers, races, results, constructors, circuits } = require('./data_provider.js');
+const { drivers, races, results, constructors, circuits, qualifying } = require('./data_provider.js');
 
 // Utility function to send a Not Found response had a bit of help for this from here: https://expressjs.com/en/guide/error-handling.html
 const notFoundResponse = (res, message) => res.status(404).json({ error: message });
@@ -78,13 +78,13 @@ router.get('/api/results/season/:year', (req, res) => {
 
 // /api/qualifying/race/id - Returns qualifying for a specific race by raceId
 router.get('/api/qualifying/race/:id', (req, res) => {
-  const raceResults = results.filter(r => r.race.id == req.params.id);
+  const raceResults = qualifying.filter(r => r.race.id == req.params.id);
   raceResults.length ? res.json(raceResults) : notFoundResponse(res, 'No results found for the specified race');
 });
 
 // /api/qualifying/season/year - Returns all qualifying results for a season
 router.get('/api/qualifying/season/:year', (req, res) => {
-  const seasonResults = results.filter(r => r.race.year == req.params.year);
+  const seasonResults = qualifying.filter(r => r.race.year == req.params.year);
   seasonResults.length ? res.json(seasonResults) : notFoundResponse(res, 'No results found for the specified season');
 });
 
